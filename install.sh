@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 OWNER="luantec44"; REPO="Space-proto-xhttp-"; BRANCH="main"; VERSION="0.5.8.0"
 BASE="https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}"
-TELEMETRY_URL="${SPACE_TELEMETRY_URL:-http://151.244.242.168:3199/api/v1/install}"
+TELEMETRY_URL="${SPACE_TELEMETRY_URL:-https://monitor.equipetech.online/api/v1/install}"
 telemetry_json_escape(){ local s="${1:-}"; s="${s//\\/\\\\}"; s="${s//\"/\\\"}"; s="${s//$'\n'/ }"; s="${s//$'\r'/ }"; printf '%s' "$s"; }
 send_install_telemetry(){
   [[ "${SPACE_TELEMETRY:-1}" != "0" ]] || return 0
